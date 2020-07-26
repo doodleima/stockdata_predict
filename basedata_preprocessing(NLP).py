@@ -20,18 +20,7 @@ t = Okt()
 # NSMC 데이터 : ratings.txt(영화 리뷰/평점 텍스트 데이터)
 total_data = pd.read_csv('영화 리뷰 평점 데이터.csv', encoding = 'UTF-8-SIG')
 del total_data['Unnamed: 0'] # 불필요 컬럼 제거(이전 index)
-"""
-#################### 3장 데이터처리 코드 정리 후 삭제할 것 ####################
-# stopwords 데이터 : 불용어사전.csv
-stopwords_data = pd.read_csv('불용어사전.csv', encoding = 'UTF-8-SIG')
-stopwords_data.drop_duplicates(subset=['words'], inplace = True)
 
-# index 컬럼을 지우고 index 재설정 후 별도 파일로 저장
-del stopwords_data["index"]
-stopwords_data.reset_index(drop = True, inplace = True)
-stopwords_data.to_csv('불용어 사전.csv', encoding = 'UTF-8-SIG')
-#################### 3장 데이터처리 코드 정리 후 삭제할 것 ####################
-"""
 # stopwords 데이터 : 불용어 사전.csv
 # csv 파일에 있는 값들을 불용어 사전에 추가
 stopwords_data = pd.read_csv('.\\헤드라인\\불용어 사전.csv', encoding = 'UTF-8-SIG') ## 위 코드 삭제 후 주석 풀 것
