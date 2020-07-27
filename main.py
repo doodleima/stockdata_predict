@@ -3,7 +3,7 @@ import pandas as pd
 from Financial_Crawler import krx_crawler
 from Marketdata_Crawler import get_market_data
 from News_crawler import headline_crawler
-from Train_Headline import train_sentimentdata, sentiment_predict
+from Predict_Headline import train_sentimentdata, sentiment_predict
 
 # pip import lxml, html5lib
 
