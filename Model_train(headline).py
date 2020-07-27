@@ -27,7 +27,7 @@ model = NLP_Model(total_words_len)
 model.compile(loss = 'binary_crossentropy', optimizer= 'adam', metrics=['accuracy'])
 model.summary()
 
-hist = model.fit(X_train, Y_train, batch_size = 512, epochs = 10, validation_split=0.25, callbacks = ckpoint)
+hist = model.fit(X_train, Y_train, batch_size = 512, epochs = 15, validation_split=0.25, callbacks = ckpoint)
 
 print('가장 높은 모델의 테스트 정확도 : %.4f' % (load_model('.\\model\\model.h5').evaluate(X_test, Y_test)[1]))
 

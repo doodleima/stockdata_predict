@@ -1,10 +1,9 @@
 # 자연어처리 기반 데이터 전처리 코드
 # 프로그램에는 포함되지 않음, input.npy/label.npy 및 data_configs.json 생성을 위해 필요
 
-# Naver Sentiment Movie Corpus data(ratings.txt)
-# data from https://github.com/e9t/nsmc/
-
+# Naver Sentiment Movie Corpus data(ratings.txt) data from https://github.com/e9t/nsmc/
 # stopwords data from https://www.ranks.nl/stopwords/korean
+
 import json
 
 import pandas as pd
@@ -37,11 +36,9 @@ total_data.drop_duplicates(subset=['document'], inplace = True)
 train_data = total_data[0:150000]
 test_data = total_data[150000:]
 
-# X는 데이터, Y는 레이블
 X_train = []
 X_test = []
 
-#### 데이터 토크나이징 ####
 # 1. 훈련 데이터 토크나이징
 for words in tqdm(train_data['document']) :
     X_token = []
@@ -55,9 +52,7 @@ for words in tqdm(test_data['document']) :
     X_token = t.morphs(words, stem = True)
     X_token  = [token_words for token_words in X_token if not token_words in stopwords]
     X_test.append(X_token)
-#### 데이터 토크나이징 ####
 
-#### 인덱싱 ####
 to = Tokenizer(19141, oov_token= 'OOV') # 단어셋 크기를 19140+1 으로 설정, out of vocabulary, 단어셋에 없는 단어 예외처리
 to.fit_on_texts(X_train)
 

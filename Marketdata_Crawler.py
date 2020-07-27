@@ -30,7 +30,3 @@ def get_market_data(jongmok) :
         del jongmok_history[i]
     print("===== " + jongmok + "(" + jongmok_code + ")의 주가 데이터(1Y)를 불러오기 완료 =====")
     jongmok_history.to_csv(str(jongmok) + " 주가추이(1년).csv", encoding = 'UTF-8-SIG')
-
-    # 주식 데이터 가져오기 : API 쓸건지? 아니면 그냥 야후파이낸셜? 네이버?
-    # 기간 정해서 해당 기간만큼만 가져와야지~
-

@@ -16,9 +16,10 @@ to = Tokenizer()
 
 #total_data = pd.read_csv('.\\헤드라인\\' + str(jongmok) + ' 기사 헤드라인.csv', encoding = 'UTF-8-SIG')
 
+total_data = pd.read_csv('.\\훈련데이터\\훈련 데이터(헤드라인).csv', encoding = 'UTF-8-SIG')
 #total_data = pd.read_csv('.\\헤드라인\\삼성전자 기사 헤드라인.csv', encoding = 'UTF-8-SIG')
 #total_data = pd.read_csv('.\\헤드라인\\LG전자 기사 헤드라인.csv', encoding = 'UTF-8-SIG')
-total_data = pd.read_csv('.\\헤드라인\\현대자동차 기사 헤드라인.csv', encoding = 'UTF-8-SIG')
+#total_data = pd.read_csv('.\\헤드라인\\현대자동차 기사 헤드라인.csv', encoding = 'UTF-8-SIG')
 
 del total_data['Unnamed: 0'] # 불필요 컬럼 제거(이전 index)
 
