@@ -18,13 +18,14 @@ from tensorflow.python.keras.preprocessing.sequence import pad_sequences
 t = Okt()
 
 # NSMC 데이터 : ratings.txt(영화 리뷰/평점 텍스트 데이터)
-total_data = pd.read_csv('.\\훈련데이터\\영화 리뷰 평점 데이터.csv', encoding = 'UTF-8-SIG')
+total_data = pd.read_csv('훈련데이터(NSMC&Headline)\\영화 리뷰 평점 데이터.csv', encoding ='UTF-8-SIG')
 del total_data['Unnamed: 0'] # 불필요 컬럼 제거(이전 index)
 
 # stopwords 데이터 : 불용어 사전.csv
 # csv 파일에 있는 값들을 불용어 사전에 추가
-stopwords_data = pd.read_csv('.\\헤드라인\\불용어 사전.csv', encoding = 'UTF-8-SIG')
-stopwords = stopwords_data['words'].values
+#stopwords_data = pd.read_csv('.\\헤드라인\\불용어 사전.csv', encoding = 'UTF-8-SIG')
+#stopwords = stopwords_data['words'].values
+stopwords = ['삼성', '은', '는', '이', '가', '하', '아', '것', '들', '의', '있', '되', '수', '보', '주', '등', '한']
 
 # 한글, 스페이스 외에 모든 문자를 제거함 : 정규표현식 사용
 total_data['document'] = total_data['document'].str.replace('[^ㄱ-ㅎ 가-힣 ㅏ-ㅣ]', '')

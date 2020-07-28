@@ -10,7 +10,7 @@ from tensorflow.python.keras.models import load_model
 
 from Model_definition import Stock_Model
 
-total_data = pd.read_csv(".\\주가데이터\\삼성전자 주가추이(1년).csv", encoding = "UTF-8-SIG")
+total_data = pd.read_csv(".\\주가데이터\\삼성전자 주가추이.csv", encoding = "UTF-8-SIG")
 cols = ['Open', 'High', 'Low', 'Close']
 predict = ['Close']
 

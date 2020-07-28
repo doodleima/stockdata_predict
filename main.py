@@ -11,15 +11,15 @@ from Predict_Headline import train_sentimentdata, sentiment_predict
 
 jongmok = input("종목 이름 입력 : ")
 
-headline_crawler(jongmok) # 뉴스 헤드라인 웹 크롤링 메소드
+#headline_crawler(jongmok) # 뉴스 헤드라인 웹 크롤링 메소드
 get_market_data(jongmok) # yfinance를 활용한 입력한 종목에 대한 1년간의 주가 시계열 데이터 수집 메소드
 
 ## 구현부분 ##
 #train_sentimentdata(jongmok) # 뉴스 헤드라인 감성분석
-##csv_df = pd.read_csv(".\\헤드라인\\삼성전자 기사 헤드라인.csv", encoding = 'UTF-8-SIG')
-##sentence = csv_df['헤드라인'].values
+#csv_df = pd.read_csv(".\\헤드라인\\삼성전자 기사 헤드라인.csv", encoding = 'UTF-8-SIG')
+#sentence = csv_df['헤드라인'].values
 
-##for i in sentence :
-##    print(i)
-##    sentiment_predict(i)
+#for i in sentence :
+#    print(i)
+#    sentiment_predict(i)
 #train_marketdata() # LSTM 사용 주가 시계열 데이터 예측
