@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 
 from konlpy.tag import Okt
@@ -17,7 +16,8 @@ def train_sentimentdata(jongmok) :
 def sentiment_predict(words) :
     #stopwords_data = pd.read_csv('.\\헤드라인\\불용어 사전.csv', encoding = 'UTF-8-SIG')
     #stopwords = stopwords_data['words'].values
-    stopwords = ['삼성', '은', '는', '이', '가', '하', '아', '것', '들', '의', '있', '되', '수', '보', '주', '등', '한']
+    stopwords = ['삼성', '네이버', '카카오', '하이닉스',
+                 '은', '는', '이', '가', '하', '아', '것', '들', '의', '있', '되', '수', '보', '주', '등', '한']
 
     words = t.morphs(words, stem=True) # 토크나이징
     words = [word for word in words if not word in stopwords] # 불용어 제거

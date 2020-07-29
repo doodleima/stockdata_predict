@@ -37,7 +37,7 @@ del total_data['Unnamed: 0'] # 불필요 컬럼 제거(이전 index)
 
 #stopwords_data = pd.read_csv('.\\헤드라인\\불용어 사전.csv', encoding = 'UTF-8-SIG')
 #stopwords = stopwords_data['words'].values
-stopwords = ['삼성', '네이버', '카카오', '하이닉스'
+stopwords = ['삼성', '네이버', '카카오', '하이닉스',
              '은', '는', '이', '가', '하', '아', '것', '들', '의', '있', '되', '수', '보', '주', '등', '한']
 
 total_data['헤드라인'] = total_data['헤드라인'].str.replace('[^ㄱ-ㅎ 가-힣 ㅏ-ㅣ]', '')

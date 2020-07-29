@@ -19,7 +19,7 @@ total_data = pd.read_csv('훈련데이터(NSMC&Headline)\\훈련데이터(헤드
 
 del total_data['Unnamed: 0'] # 불필요 컬럼 제거(이전 index)
 
-stopwords = ['삼성', '네이버', '카카오', '하이닉스'
+stopwords = ['삼성', '네이버', '카카오', '하이닉스',
              '은', '는', '이', '가', '하', '아', '것', '들', '의', '있', '되', '수', '보', '주', '등', '한']
 
 total_data['헤드라인'] = total_data['헤드라인'].str.replace('[^ㄱ-ㅎ 가-힣 ㅏ-ㅣ]', '')

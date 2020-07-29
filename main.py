@@ -15,6 +15,8 @@ jongmok = input("종목 이름 입력 : ")
 get_market_data(jongmok) # yfinance를 활용한 입력한 종목에 대한 1년간의 주가 시계열 데이터 수집 메소드
 
 ## 구현부분 ##
+# predict # 주가 예측
+# precict # 기사 예측(긍부정척도 반환)
 #train_sentimentdata(jongmok) # 뉴스 헤드라인 감성분석
 #csv_df = pd.read_csv(".\\헤드라인\\삼성전자 기사 헤드라인.csv", encoding = 'UTF-8-SIG')
 #sentence = csv_df['헤드라인'].values

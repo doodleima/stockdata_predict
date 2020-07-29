@@ -9,7 +9,7 @@ import pandas as pd
 def headline_crawler(jongmok) :
     base = 'https://search.naver.com/search.naver?where=news&sm=tab_jum'
     page = '&start={pagenum}&query={keyword}'
-    option = '&sm=tab_srt&sort=0&pd=3&photo=3' #&field=1 - 영역 설정하니까 뉴스가 매우 많이 줄음, 비활성화
+    option = '&sm=tab_srt&sort=0&pd=1&photo=3' #&field=1 - 영역 설정하니까 뉴스가 매우 많이 줄음, 비활성화
     # sort는 정렬방식(0 관련도순, 1 최신순, 2 오래된순), pd는 기간(1 1주, 2 1개월), photo는 기사 유형(3은 지면기사), field는 영역(내용, 1이 제목)
 
     url_full = base + page + option  # 전체 URL 주소
@@ -29,7 +29,7 @@ def headline_crawler(jongmok) :
         pagecount.append(str(i)) # 불용어 사전 리스트에 값 집어넣기
 
 
-    for num in range(0, 1000, 10): # 50개의 페이지에 대해 수행, 30개가 적당할지도? 긁어올 페이지 수 고려해봐야..
+    for num in range(0, 300, 10): # 50개의 페이지에 대해 수행, 30개가 적당할지도? 긁어올 페이지 수 고려해봐야..
         print("===== " + str(pagenum) +"번째 페이지의 헤드라인을 가져옵니다. =====")
         res = urlopen(url_full.format(pagenum=num, keyword=urllib.parse.quote(jongmok)))
         soup = BeautifulSoup(res, 'html.parser')

@@ -1,3 +1,6 @@
+
+
+"""
 import pandas as pd
 import os
 import pandas as pd
@@ -74,7 +77,7 @@ print('Predict the Close value of final day: %d' % lastY)  # 데이터 입력 �
 plt.plot(testPredict)
 plt.plot(testY)
 plt.show()
-
+"""
 """
 df1 = pd.read_csv("C:\\Users\\Lim\\Desktop\\7월 27일 크롤링\\SK하이닉스 기사 헤드라인.csv", encoding ='UTF-8-SIG')
 df2 = pd.read_csv("C:\\Users\\Lim\\Desktop\\7월 27일 크롤링\\NAVER 기사 헤드라인.csv", encoding ='UTF-8-SIG')
