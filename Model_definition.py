@@ -22,7 +22,7 @@ def NLP_Model(total_words_len) :
     model.add(Dropout(0.1))
     model.add(Conv1D(128, 3, padding='same', kernel_initializer='he_normal', activation='relu')) # 768, 3
     model.add(GlobalMaxPool1D())
-    model.add(Dense(256)) # , activation='relu'
+    model.add(Dense(64)) # , activation='relu'
     model.add(Dropout(0.1))
     model.add(Dense(1, activation='sigmoid'))
 
