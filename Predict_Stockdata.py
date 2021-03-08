@@ -31,11 +31,11 @@ def predict_stock(jongmok) :
     test_feature = test[feature_cols]
     test_label = test[label_cols]
 
-    # 훈련 데이터셋과 테스트 데이터셋
+    # Train / Test Dataset
     train_feature, train_label = dataset(train_feature, train_label, 31)
     test_feature, test_label = dataset(test_feature, test_label, 7)
 
-    # 훈련셋과 검증셋 스플릿
+    # Split Data : Train : 0.75 / Test : 0.25
     X_train, X_test, Y_train, Y_test = train_test_split(train_feature, train_label, test_size=0.25)
 
     erstoping = EarlyStopping(monitor = 'val_loss', patience = 5)
@@ -48,6 +48,8 @@ def predict_stock(jongmok) :
 
     hist = model.fit(X_train, Y_train, epochs=64, batch_size=16, validation_data=(X_test, Y_test), callbacks=[erstoping, ckpoint])
     predict = model.predict(test_feature)
+    
+    # plot : estimated result 
     """
     plt.figure(figsize=(9, 5))
     plt.plot(test_label, label='original')
