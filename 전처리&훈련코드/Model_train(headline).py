@@ -1,4 +1,6 @@
-#### 양방향 장단기메모리 ####
+#### CNN ####
+# i7-8750H / RTX 2060(8GB)
+
 import json
 import os
 import numpy as np
