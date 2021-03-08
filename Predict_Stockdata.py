@@ -41,6 +41,7 @@ def predict_stock(jongmok) :
     erstoping = EarlyStopping(monitor = 'val_loss', patience = 5)
     ckpoint = ModelCheckpoint('.\\stock_model\\model.h5', monitor = 'val_loss', verbose = 1, save_best_only = True) #, mode = 'auto')
 
+    #### RNN(LSTM) #### 
     model = Stock_Model(train_feature)
 
     model.compile(loss = 'mean_squared_error', optimizer = 'adam')
